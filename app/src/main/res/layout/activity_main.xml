@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:isScrollContainer="true"
+        android:max="100"
+        custom:theme="@style/seekbarTheme" />
+
+    <!--android:isScrollContainer="true" to make seekbar progressive-->
+
+    <TextView
+        android:id="@+id/seekbarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekBar"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="AppCompatSeekBar :"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/seekbar_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekBar"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/seekbarText"
+        android:text="0"
+        android:textSize="18sp" />
+
+    <com.appyvet.materialrangebar.RangeBar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/customSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_below="@id/seekbar_value"
+        android:layout_margin="30dp"
+        app:mrb_pinRadius="16dp"
+        app:mrb_rangeBar="false"
+        app:mrb_rangeBar_rounded="true"
+        app:mrb_tickEnd="100"
+        app:mrb_tickInterval="1"
+        app:mrb_tickStart="1" />
+    <!--app:mrb_rangeBar="false" to remove double head of rangebar-->
+    <!--app:mrb_tickStart="1" intial value of range bar-->
+    <!--app:mrb_tickEnd="100" final value of rangebar-->
+    <!--app:mrb_pinRadius="16dp" drop size of range bar-->
+    <!--app:mrb_tickInterval="1" progress value of rangebar-->
+
+    <TextView
+        android:id="@+id/cutomRangebarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customSeekBar"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="appyvetBar :"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/rangebarValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customSeekBar"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/cutomRangebarText"
+        android:text="0"
+        android:textSize="18sp" />
+
+</RelativeLayout>
